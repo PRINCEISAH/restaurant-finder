@@ -9,6 +9,6 @@ class AppColors {
   static const GeryTextColor = Color(0xFF948C8C);
   static const PinkColors = Color(0xFFFFE5D7);
   static const textblueColor = Color(0xFF767D9E);
-  static const CategoriesgreyColor = Color(0xFFACAEB3);
+
   static const TextgreyColor = Color(0xFF988B8B);
 }

@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
-  dio: ^3.0.10
   firebase: ^8.0.0
   firebase_auth: ^0.18.4
   firebase_core: ^0.5.3
@@ -32,8 +31,10 @@ dependencies:
   flutter_svg: ^0.18.1
   geolocator: ^6.1.14
   google_fonts: ^1.1.1
+  google_maps: ^4.0.0
+  google_maps_flutter: ^1.1.1
   http: ^0.12.2
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -80,7 +80,7 @@ class RestaurantCard extends StatelessWidget {
                               height: GetHeight(7.44),
                             ),
                             Text(
-                              " Years",
+                              "",
                               style: TextStyle(
                                   fontSize: 8, fontWeight: FontWeight.w500),
                             ),
@@ -108,7 +108,6 @@ class RestaurantCard extends StatelessWidget {
                           child: Container(
                             height: GetHeight(16.89),
                             width: GetWidth(16.98),
-                            // child: SvgPicture.asset("images/fav.svg")),
                           ),
                         )
                       ],
