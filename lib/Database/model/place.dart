@@ -15,7 +15,7 @@ class PlaceDetail {
 
   @override
   String toString() {
-    print("${name},${phone_number},${rating},${id},${icon}");
+    print("${name},${phone_number},${rating},${id},${icon},${vicinity}");
     return super.toString();
   }
 }

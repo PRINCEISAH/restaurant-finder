@@ -54,12 +54,19 @@ class _Restaurant_ScreenState extends State<Restaurant_Screen> {
                     setState(() {
                       placedata = value;
                     });
-                  }).whenComplete(() => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CurrentLocationScreen(
-                                placeDetail: placedata,
-                              ))));
+                  }).whenComplete(
+                    () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CurrentLocationScreen(
+                                    placeDetail: placedata,
+                                  )));
+                      setState(() {
+                        isLoading = false;
+                      });
+                    },
+                  );
                 } catch (e) {}
               },
               child: Text("Check for current location"),

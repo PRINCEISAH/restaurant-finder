@@ -88,7 +88,6 @@ class RegisterScreen extends StatelessWidget {
                 SizedBox(
                   height: GetHeight(16),
                 ),
-                Text("Don't have an account? Sign up")
               ],
             ),
           ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant/Database/Authentication/authentication.dart';
 import 'package:restaurant/Screen/login/Register.dart';
 import 'package:restaurant/SizeConfiguration/SizeConfig.dart';
+import 'package:restaurant/utils/colors.dart';
 
 class LoginScreen extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
@@ -12,6 +13,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      backgroundColor: AppColors.backgroundcolor,
       body: Form(
         child: SingleChildScrollView(
           child: Container(
@@ -33,12 +35,17 @@ class LoginScreen extends StatelessWidget {
                           Text(
                             "Let's Sign You In",
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w700),
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700),
                           ),
                           SizedBox(
                             height: GetHeight(8),
                           ),
-                          Text("Welcome back, you’ve been missed!")
+                          Text(
+                            "Welcome back, you’ve been missed!",
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       )),
                 ),
@@ -90,7 +97,9 @@ class LoginScreen extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'SIGN IN',
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                            color: AppColors.backgroundcolor,
+                            fontWeight: FontWeight.w700),
                       ),
                     ),
                   ),
@@ -104,10 +113,6 @@ class LoginScreen extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => RegisterScreen())),
                     child: Text("Don't have an account? Sign up")),
-                RaisedButton(
-                  onPressed: () async {},
-                  child: Text("check"),
-                )
               ],
             ),
           ),

@@ -8,19 +8,17 @@ class Rating_Bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RatingBar.builder(
-        initialRating: 4,
-        minRating: 1,
-        itemSize: 20,
-        direction: Axis.horizontal,
-        allowHalfRating: true,
-        itemCount: 5,
-        itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-        itemBuilder: (context, _) => Icon(
-              Icons.star,
-              color: Colors.amber,
-            ),
-        onRatingUpdate: (rating) {
-          print(rating);
-        });
+      initialRating: 3,
+      minRating: 1,
+      itemSize: 20,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemCount: 5,
+      itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+      itemBuilder: (context, _) => Icon(
+        Icons.star,
+        color: Colors.amber,
+      ),
+    );
   }
 }
