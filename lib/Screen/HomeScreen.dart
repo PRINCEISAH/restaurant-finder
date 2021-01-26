@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant/Database/Services/placeRepsitory.dart';
 import 'package:restaurant/Database/Services/service.dart';
 import 'package:restaurant/Database/model/place.dart';
+import 'package:restaurant/Screen/restaurantscreen.dart';
 import 'package:restaurant/SizeConfiguration/SizeConfig.dart';
 import 'package:restaurant/utils/colors.dart';
 import 'package:restaurant/utils/credentials.dart';
@@ -29,23 +30,40 @@ class Restaurant_Screen extends StatefulWidget {
 
 class _Restaurant_ScreenState extends State<Restaurant_Screen> {
   PlacesRepository _placesRepository = PlacesRepository();
-  List<PlaceDetail> place = [];
+  List<PlaceDetail> placedata = [];
+
+  bool isLoading = false;
   @override
   void initState() {
     GetUserLocation().getCurrentLocation();
-    PlacesRepository().places();
   }
 
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
-    print(place.length);
     return Center(
-      child: RaisedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, "currentlocation");
-        },
-        child: Text("Check for current location"),
-      ),
+      child: isLoading
+          ? CircularProgressIndicator()
+          : RaisedButton(
+              onPressed: () async {
+                setState(() {
+                  isLoading = true;
+                });
+                try {
+                  _placesRepository.placesapi().then((value) {
+                    setState(() {
+                      placedata = value;
+                    });
+                  }).whenComplete(() => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CurrentLocationScreen(
+                                placeDetail: placedata,
+                              ))));
+                } catch (e) {}
+              },
+              child: Text("Check for current location"),
+            ),
     );
   }
 }

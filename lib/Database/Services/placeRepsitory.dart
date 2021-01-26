@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
 
 import 'package:geolocator/geolocator.dart';
 import 'package:restaurant/Database/Services/service.dart';
@@ -26,7 +25,7 @@ class PlacesRepository {
     List<PlaceDetail> places = [];
 
     data.forEach((f) => places.add(new PlaceDetail(f["place_id"], f["name"],
-        f["icon"], f["rating"].toString(), f["vicinity"])));
+        f["icon"], f["address"], f["rating"].toString(), f["vicinity"])));
 
     print(places);
 
@@ -47,7 +46,7 @@ class PlacesRepository {
         result["icon"],
         result["rating"].toString(),
         result["vicinity"],
-        result["formatted_address"],
+        result["address"],
         result["international_phone_number"],
         weekdays);
   }

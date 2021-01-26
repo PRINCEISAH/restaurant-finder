@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps/google_maps.dart';
 import 'package:restaurant/Database/Services/placeRepsitory.dart';
 import 'package:restaurant/Database/Services/service.dart';
 import 'package:restaurant/Database/model/place.dart';
@@ -12,35 +11,25 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class CurrentLocationScreen extends StatelessWidget {
+  final List<PlaceDetail> placeDetail;
+
+  const CurrentLocationScreen({Key key, this.placeDetail}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       appBar: appbar(),
       backgroundColor: AppColors.backgroundcolor,
-      body: Restaurant_Screen(),
+      body: ListView.builder(
+          itemCount: placeDetail.length,
+          itemBuilder: (context, index) {
+            return RestaurantCard(
+              name: placeDetail[index].name,
+              address: placeDetail[index].address,
+              IconUrl: placeDetail[index].icon,
+            );
+          }),
     );
-  }
-}
-
-class Restaurant_Screen extends StatefulWidget {
-  @override
-  _Restaurant_ScreenState createState() => _Restaurant_ScreenState();
-}
-
-class _Restaurant_ScreenState extends State<Restaurant_Screen> {
-  List<PlaceDetail> place = [];
-
-  @override
-  Widget build(BuildContext context) {
-    print(place.length);
-    return ListView.builder(
-        itemCount: 3,
-        itemBuilder: ((context, index) {
-          return RestaurantCard(
-            name: place[index].name,
-            address: place[index].formatted_address,
-          );
-        }));
   }
 }

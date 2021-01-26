@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:restaurant/Screen/HomeScreen.dart';
 import 'package:restaurant/Screen/login/LoginScreen.dart';
 import 'package:restaurant/Screen/restaurantscreen.dart';
+import 'package:restaurant/Screen/wrapper.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'restaurant app',
       theme: ThemeData(),
       routes: {
-        '/': (context) => LoginScreen(),
+        '/': (context) => Wrapper(),
       },
     );
   }
