@@ -13,7 +13,7 @@ and other packages.
 
 
 ## App Screenshots: 
-![54a707391eb6bd2452e8a6fb10f84a21](https://github.com/PRINCEISAH/restaurant-finder/assets/37813957/9e3ca99b-cc91-419f-976c-0ed8537831e1)
+<img src="./android/readme_assets/restaurant-finder.png" height=600>
 
 
 ### How to Use:
