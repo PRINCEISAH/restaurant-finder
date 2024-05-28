@@ -13,7 +13,7 @@ and other packages.
 
 
 ## App Screenshots: 
-<img src="./android/readme_assets/restaurant-finder.png" height=600>
+<img src="./android/readme_assets/restaurant-finder.png" height=300>
 
 
 ### How to Use:
